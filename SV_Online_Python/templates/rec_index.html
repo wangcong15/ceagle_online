@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AddData: Assertion Recommendation</title>
+    <link rel="shortcut icon" href="{% static "images/favicon.ico" %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static "css/bootstrap.min.css" %}">
+</head>
+<body>
+<div>Code:</div>
+<textarea id="code" style="width:100%;height:500px"></textarea>
+<div>Variable:</div>
+<input id="variable"></input>
+<div>Expression:</div>
+<input id="expression"></input>
+<button id="btn-submit" class="btn btn-primary">Submit</button>
+	<script src="{% static "js/jquery-1.12.1.min.js" %}" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="{% static "js/bootstrap.min.js" %}"></script>
+	<script type="text/javascript">
+		$("#btn-submit").click(function(){
+			var code = $("#code").val();
+			var variable = $("#variable").val();
+			var expression = $("#expression").val();
+			$("#code").val("");
+			$("#variable").val("");
+			$("#expression").val("");
+			var asser_flag = true;
+			if(variable=="")
+				asser_flag = false;
+			$.ajax({
+		        type: "GET",
+		        url: "/asser_add_api/",
+		        data: {'code': code, 'asser_flag':asser_flag, 'variable':variable, 'expression':expression},
+		        dataType: "json",
+		        success: function(data) {
+		            alert("success");
+		        },
+		        error:function(data){
+		            alert("failure");
+		        },
+		    });
+		});
+	</script>
+</body>
+</html>

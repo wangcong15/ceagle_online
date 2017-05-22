@@ -1,0 +1,8 @@
+uwsgi --http :9792 --chdir /home/wangcong15/Documents/SV_Online_Python --wsgi-file SV_Online_Python/wsgi.py --processes 4 --static-map /static=/home/wangcong15/Documents/SV_Online_Python/static
+
+python manage.py collectstatic
+
+
+
+
+uwsgi --http :9792 --chdir /home/wangcong15/Documents/gitlab_sv_online/sv-online --wsgi-file SV_Online_Python/wsgi.py --processes 4 --static-map /static=/home/wangcong15/Documents/gitlab_sv_online/sv-online/SV_Online_Python/static
