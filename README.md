@@ -45,7 +45,10 @@
 
 * cd ceagle_online/
 * sudo pip install pycparser
+* sudo pip install django==1.8
+* python manage.py makemigrations
 * python manage.py migrate
+* sudo pip install django==1.9.2
 
 ### run the server
 * uwsgi --http :9794 --chdir ~/Desktop/sv-online --wsgi-file SV_Online_Python/wsgi.py --processes 1 --static-map /static=SV_Online_Python/static
