@@ -51,5 +51,5 @@
 * sudo pip install django==1.9.2
 
 ### run the server
-* uwsgi --http :9794 --chdir ~/Desktop/sv-online --wsgi-file SV_Online_Python/wsgi.py --processes 1 --static-map /static=SV_Online_Python/static
+* uwsgi -i uwsgi.ini
 
