@@ -1,122 +1,68 @@
-*** Starting uWSGI 2.0.15 (64bit) on [Wed May 10 14:11:07 2017] ***
-compiled with version: 5.4.0 20160609 on 10 May 2017 13:11:48
-os: Linux-4.4.0-53-generic #74-Ubuntu SMP Fri Dec 2 15:59:10 UTC 2016
-nodename: VM-151-230-ubuntu
+*** Starting uWSGI 2.0.15 (64bit) on [Wed May 24 13:32:22 2017] ***
+compiled with version: 4.8.4 on 24 May 2017 13:17:06
+os: Linux-4.4.0-31-generic #50~14.04.1-Ubuntu SMP Wed Jul 13 01:07:32 UTC 2016
+nodename: cong
 machine: x86_64
 clock source: unix
-detected number of CPU cores: 2
-current working directory: /home/ubuntu/Document/sv-online
-detected binary path: /usr/local/bin/uwsgi
-!!! no internal routing support, rebuild with pcre support !!!
-chdir() to /home/ubuntu/Document/sv-online
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/cong/Desktop/ceagle_online
+detected binary path: /usr/bin/uwsgi
+chdir() to /home/cong/Desktop/ceagle_online
 *** WARNING: you are running uWSGI without its master process manager ***
-your processes number limit is 7339
+your processes number limit is 15266
 your memory page size is 4096 bytes
 detected max file descriptor number: 1024
-building mime-types dictionary from file /etc/mime.types...552 entry found
+building mime-types dictionary from file /etc/mime.types...536 entry found
 lock engine: pthread robust mutexes
 thunder lock: disabled (you can enable it with --thunder-lock)
 uWSGI http bound on :9796 fd 4
-spawned uWSGI http 1 (pid: 15916)
-uwsgi socket 0 bound to TCP address 127.0.0.1:34297 (port auto-assigned) fd 3
-Python version: 2.7.12 (default, Nov 19 2016, 06:48:10)  [GCC 5.4.0 20160609]
+spawned uWSGI http 1 (pid: 28822)
+uwsgi socket 0 bound to TCP address 127.0.0.1:39323 (port auto-assigned) fd 3
+Python version: 2.7.6 (default, Oct 26 2016, 20:33:43)  [GCC 4.8.4]
 *** Python threads support is disabled. You can enable it with --enable-threads ***
-Python main interpreter initialized at 0xc53070
+Python main interpreter initialized at 0xd3dce0
 your server socket listen backlog is limited to 100 connections
 your mercy for graceful operations on workers is 60 seconds
 mapped 145520 bytes (142 KB) for 2 cores
 *** Operational MODE: preforking ***
-WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xc53070 pid: 15915 (default app)
-*** uWSGI is running in multiple interpreter mode ***
-spawned uWSGI worker 1 (pid: 15915, cores: 1)
-spawned uWSGI worker 2 (pid: 15919, cores: 1)
-[pid: 15915|app: 0|req: 1/1] 58.200.235.56 () {38 vars in 781 bytes} [Wed May 10 06:11:17 2017] GET / => generated 0 bytes in 34 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 2/2] 58.200.235.56 () {38 vars in 793 bytes} [Wed May 10 06:11:17 2017] GET /login/ => generated 0 bytes in 9 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 3/3] 58.200.235.56 () {38 vars in 808 bytes} [Wed May 10 06:11:17 2017] GET /index/ => generated 19412 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15915|app: -1|req: -1/4] 58.200.235.56 () {38 vars in 791 bytes} [Wed May 10 06:11:17 2017] GET /static/css/envelope.css => generated 5375 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/5] 58.200.235.56 () {38 vars in 793 bytes} [Wed May 10 06:11:17 2017] GET /static/css/libnotify.css => generated 5474 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/6] 58.200.235.56 () {38 vars in 795 bytes} [Wed May 10 06:11:17 2017] GET /static/css/zTreeStyle.css => generated 6231 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/7] 58.200.235.56 () {38 vars in 783 bytes} [Wed May 10 06:11:17 2017] GET /static/css/main.css => generated 3374 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/8] 58.200.235.56 () {38 vars in 801 bytes} [Wed May 10 06:11:17 2017] GET /static/css/bootstrap.min.css => generated 106006 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/9] 58.200.235.56 () {38 vars in 795 bytes} [Wed May 10 06:11:17 2017] GET /static/css/uploadfile.css => generated 2859 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/10] 58.200.235.56 () {38 vars in 794 bytes} [Wed May 10 06:11:17 2017] GET /static/src-min-noconflict/ace.js => generated 347254 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 127 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/11] 58.200.235.56 () {38 vars in 803 bytes} [Wed May 10 06:11:19 2017] GET /static/images/folder.png => generated 3106 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/12] 58.200.235.56 () {38 vars in 805 bytes} [Wed May 10 06:11:19 2017] GET /static/images/setting.png => generated 3364 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/13] 58.200.235.56 () {38 vars in 799 bytes} [Wed May 10 06:11:19 2017] GET /static/images/file.png => generated 2006 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/14] 58.200.235.56 () {38 vars in 803 bytes} [Wed May 10 06:11:19 2017] GET /static/images/ceagle.png => generated 58344 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/15] 58.200.235.56 () {38 vars in 803 bytes} [Wed May 10 06:11:19 2017] GET /static/images/upload.png => generated 3168 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/16] 58.200.235.56 () {38 vars in 803 bytes} [Wed May 10 06:11:19 2017] GET /static/images/logout.png => generated 2174 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/17] 58.200.235.56 () {38 vars in 786 bytes} [Wed May 10 06:11:19 2017] GET /static/js/envelope.jquery.js => generated 6636 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/18] 58.200.235.56 () {38 vars in 790 bytes} [Wed May 10 06:11:19 2017] GET /static/js/jquery-1.12.1.min.js => generated 97403 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/19] 58.200.235.56 () {38 vars in 776 bytes} [Wed May 10 06:11:19 2017] GET /static/js/humane.min.js => generated 5660 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/20] 58.200.235.56 () {38 vars in 798 bytes} [Wed May 10 06:11:19 2017] GET /static/js/jquery.ztree.core.min.js => generated 30476 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/21] 58.200.235.56 () {38 vars in 782 bytes} [Wed May 10 06:11:20 2017] GET /static/js/bootstrap.min.js => generated 28631 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/22] 58.200.235.56 () {38 vars in 798 bytes} [Wed May 10 06:11:20 2017] GET /static/js/jquery.uploadfile.min.js => generated 24141 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/23] 58.200.235.56 () {38 vars in 782 bytes} [Wed May 10 06:11:20 2017] GET /static/js/jquery.cookie.js => generated 3121 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/24] 58.200.235.56 () {38 vars in 764 bytes} [Wed May 10 06:11:20 2017] GET /static/js/main.js => generated 9392 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/25] 58.200.235.56 () {38 vars in 793 bytes} [Wed May 10 06:11:21 2017] GET /static/images/1.png => generated 9213 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/26] 58.200.235.56 () {38 vars in 793 bytes} [Wed May 10 06:11:21 2017] GET /static/images/2.png => generated 16948 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/27] 58.200.235.56 () {38 vars in 793 bytes} [Wed May 10 06:11:21 2017] GET /static/images/3.png => generated 16824 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/28] 58.200.235.56 () {38 vars in 793 bytes} [Wed May 10 06:11:21 2017] GET /static/images/4.png => generated 28685 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
-[pid: 15915|app: 0|req: 4/29] 58.200.235.56 () {40 vars in 954 bytes} [Wed May 10 06:11:24 2017] GET /index/jquery.form.js?_=1494396683524 => generated 19412 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15915|app: -1|req: -1/30] 58.200.235.56 () {38 vars in 814 bytes} [Wed May 10 06:11:24 2017] GET /static/src-min-noconflict/theme-monokai.js => generated 2375 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/31] 58.200.235.56 () {38 vars in 808 bytes} [Wed May 10 06:11:24 2017] GET /static/src-min-noconflict/mode-c_cpp.js => generated 17346 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/32] 58.200.235.56 () {38 vars in 836 bytes} [Wed May 10 06:11:24 2017] GET /static/images/zTreeStandard.png => generated 11173 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/33] 58.200.235.56 () {38 vars in 806 bytes} [Wed May 10 06:11:24 2017] GET /static/images/favicon.ico => generated 1150 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 127 bytes (0 switches on core 0)
-[pid: 15915|app: 0|req: 5/34] 58.200.235.56 () {40 vars in 918 bytes} [Wed May 10 06:11:31 2017] GET /filecontent/?filename=nan_double_false-unreach-call.c => generated 393 bytes in 4 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 15915|app: -1|req: -1/35] 58.200.235.56 () {38 vars in 804 bytes} [Wed May 10 06:11:32 2017] GET /static/images/verify.png => generated 1259 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
-[pid: 15915|app: 0|req: 6/36] 58.200.235.56 () {40 vars in 908 bytes} [Wed May 10 06:11:33 2017] GET /verify/?filename=nan_double_false-unreach-call.c => generated 2394 bytes in 144 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 7/37] 58.200.235.56 () {38 vars in 782 bytes} [Wed May 10 06:15:57 2017] GET / => generated 0 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 8/38] 58.200.235.56 () {38 vars in 794 bytes} [Wed May 10 06:15:58 2017] GET /login/ => generated 0 bytes in 3 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 9/39] 58.200.235.56 () {38 vars in 809 bytes} [Wed May 10 06:15:58 2017] GET /index/ => generated 19412 bytes in 9 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 10/40] 58.200.235.56 () {40 vars in 955 bytes} [Wed May 10 06:15:58 2017] GET /index/jquery.form.js?_=1494396957965 => generated 19412 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 11/41] 58.200.235.56 () {38 vars in 782 bytes} [Wed May 10 06:19:45 2017] GET / => generated 0 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 12/42] 58.200.235.56 () {38 vars in 794 bytes} [Wed May 10 06:19:46 2017] GET /login/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 13/43] 58.200.235.56 () {38 vars in 809 bytes} [Wed May 10 06:19:46 2017] GET /index/ => generated 19412 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15919|app: -1|req: -1/44] 58.200.235.56 () {40 vars in 847 bytes} [Wed May 10 06:19:46 2017] GET /static/css/envelope.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/45] 58.200.235.56 () {40 vars in 849 bytes} [Wed May 10 06:19:46 2017] GET /static/css/libnotify.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/46] 58.200.235.56 () {40 vars in 851 bytes} [Wed May 10 06:19:46 2017] GET /static/css/zTreeStyle.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/47] 58.200.235.56 () {40 vars in 839 bytes} [Wed May 10 06:19:46 2017] GET /static/css/main.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/48] 58.200.235.56 () {40 vars in 857 bytes} [Wed May 10 06:19:46 2017] GET /static/css/bootstrap.min.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/49] 58.200.235.56 () {40 vars in 851 bytes} [Wed May 10 06:19:46 2017] GET /static/css/uploadfile.css => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/50] 58.200.235.56 () {40 vars in 850 bytes} [Wed May 10 06:19:46 2017] GET /static/src-min-noconflict/ace.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/51] 58.200.235.56 () {40 vars in 846 bytes} [Wed May 10 06:19:46 2017] GET /static/js/jquery-1.12.1.min.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/52] 58.200.235.56 () {40 vars in 842 bytes} [Wed May 10 06:19:46 2017] GET /static/js/envelope.jquery.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/53] 58.200.235.56 () {40 vars in 832 bytes} [Wed May 10 06:19:46 2017] GET /static/js/humane.min.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/54] 58.200.235.56 () {40 vars in 854 bytes} [Wed May 10 06:19:46 2017] GET /static/js/jquery.ztree.core.min.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/55] 58.200.235.56 () {40 vars in 838 bytes} [Wed May 10 06:19:46 2017] GET /static/js/bootstrap.min.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/56] 58.200.235.56 () {40 vars in 859 bytes} [Wed May 10 06:19:46 2017] GET /static/images/upload.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/57] 58.200.235.56 () {40 vars in 859 bytes} [Wed May 10 06:19:47 2017] GET /static/images/folder.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/58] 58.200.235.56 () {40 vars in 861 bytes} [Wed May 10 06:19:47 2017] GET /static/images/setting.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/59] 58.200.235.56 () {40 vars in 855 bytes} [Wed May 10 06:19:47 2017] GET /static/images/file.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/60] 58.200.235.56 () {40 vars in 859 bytes} [Wed May 10 06:19:47 2017] GET /static/images/ceagle.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/61] 58.200.235.56 () {40 vars in 859 bytes} [Wed May 10 06:19:47 2017] GET /static/images/logout.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/62] 58.200.235.56 () {40 vars in 854 bytes} [Wed May 10 06:19:47 2017] GET /static/js/jquery.uploadfile.min.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/63] 58.200.235.56 () {40 vars in 838 bytes} [Wed May 10 06:19:47 2017] GET /static/js/jquery.cookie.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/64] 58.200.235.56 () {40 vars in 820 bytes} [Wed May 10 06:19:47 2017] GET /static/js/main.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/65] 58.200.235.56 () {40 vars in 849 bytes} [Wed May 10 06:19:47 2017] GET /static/images/1.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15919|app: 0|req: 1/66] 58.200.235.56 () {40 vars in 955 bytes} [Wed May 10 06:19:47 2017] GET /index/jquery.form.js?_=1494397186426 => generated 19412 bytes in 51 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15919|app: -1|req: -1/67] 58.200.235.56 () {40 vars in 892 bytes} [Wed May 10 06:19:47 2017] GET /static/images/zTreeStandard.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/68] 58.200.235.56 () {40 vars in 849 bytes} [Wed May 10 06:19:47 2017] GET /static/images/2.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/69] 58.200.235.56 () {40 vars in 849 bytes} [Wed May 10 06:19:47 2017] GET /static/images/3.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/70] 58.200.235.56 () {40 vars in 849 bytes} [Wed May 10 06:19:47 2017] GET /static/images/4.png => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/71] 58.200.235.56 () {40 vars in 870 bytes} [Wed May 10 06:19:47 2017] GET /static/src-min-noconflict/theme-monokai.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/72] 58.200.235.56 () {40 vars in 864 bytes} [Wed May 10 06:19:47 2017] GET /static/src-min-noconflict/mode-c_cpp.js => generated 0 bytes in 0 msecs (HTTP/1.1 304) 0 headers in 29 bytes (0 switches on core 0)
-[pid: 15915|app: 0|req: 14/73] 58.200.235.56 () {40 vars in 840 bytes} [Wed May 10 06:19:51 2017] GET /index/ => generated 19412 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 15/74] 58.200.235.56 () {40 vars in 955 bytes} [Wed May 10 06:19:51 2017] GET /index/jquery.form.js?_=1494397191059 => generated 19412 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15915|app: -1|req: -1/75] 58.200.235.56 () {42 vars in 859 bytes} [Wed May 10 06:19:51 2017] GET /static/images/favicon.ico => generated 1150 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 127 bytes (0 switches on core 0)
-[pid: 15915|app: 0|req: 16/76] 58.200.235.56 () {38 vars in 698 bytes} [Wed May 10 06:21:16 2017] GET / => generated 0 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 17/77] 58.200.235.56 () {38 vars in 710 bytes} [Wed May 10 06:21:17 2017] GET /login/ => generated 4168 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
-[pid: 15919|app: -1|req: -1/78] 58.200.235.56 () {38 vars in 772 bytes} [Wed May 10 06:21:17 2017] GET /static/assets/bootstrap/css/bootstrap.min.css => generated 117305 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/79] 58.200.235.56 () {38 vars in 784 bytes} [Wed May 10 06:21:17 2017] GET /static/assets/font-awesome/css/font-awesome.min.css => generated 23739 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/80] 58.200.235.56 () {38 vars in 752 bytes} [Wed May 10 06:21:17 2017] GET /static/assets/css/form-elements.css => generated 2511 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/81] 58.200.235.56 () {38 vars in 736 bytes} [Wed May 10 06:21:17 2017] GET /static/assets/css/style.css => generated 3496 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/82] 58.200.235.56 () {38 vars in 741 bytes} [Wed May 10 06:21:17 2017] GET /static/assets/js/jquery-1.11.1.min.js => generated 95786 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/83] 58.200.235.56 () {38 vars in 753 bytes} [Wed May 10 06:21:17 2017] GET /static/assets/bootstrap/js/bootstrap.min.js => generated 35951 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/84] 58.200.235.56 () {38 vars in 751 bytes} [Wed May 10 06:21:17 2017] GET /static/assets/js/jquery.backstretch.min.js => generated 4233 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
-[pid: 15919|app: -1|req: -1/85] 58.200.235.56 () {38 vars in 721 bytes} [Wed May 10 06:21:17 2017] GET /static/assets/js/scripts.js => generated 601 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 124 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/86] 58.200.235.56 () {40 vars in 890 bytes} [Wed May 10 06:21:19 2017] GET /static/assets/font-awesome/fonts/fontawesome-webfont.woff2?v=4.3.0 => generated 56780 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 2 headers in 88 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/87] 58.200.235.56 () {38 vars in 762 bytes} [Wed May 10 06:21:20 2017] GET /static/assets/img/backgrounds/1.jpg => generated 182322 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 115 bytes (0 switches on core 0)
-[pid: 15915|app: -1|req: -1/88] 58.200.235.56 () {38 vars in 742 bytes} [Wed May 10 06:21:22 2017] GET /static/images/favicon.ico => generated 1150 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 127 bytes (0 switches on core 0)
-[pid: 15915|app: 0|req: 18/89] 58.200.235.56 () {38 vars in 717 bytes} [Wed May 10 06:22:24 2017] GET / => generated 0 bytes in 1 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
-[pid: 15915|app: 0|req: 19/90] 58.200.235.56 () {38 vars in 729 bytes} [Wed May 10 06:22:24 2017] GET /login/ => generated 4168 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xd3dce0 pid: 28821 (default app)
+spawned uWSGI worker 1 (pid: 28821, cores: 1)
+spawned uWSGI worker 2 (pid: 28825, cores: 1)
+[pid: 28825|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 721 bytes} [Wed May 24 05:32:28 2017] GET / => generated 0 bytes in 68 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 28825|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 733 bytes} [Wed May 24 05:32:28 2017] GET /login/ => generated 0 bytes in 15 msecs (HTTP/1.1 302) 3 headers in 110 bytes (1 switches on core 0)
+[pid: 28825|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 748 bytes} [Wed May 24 05:32:29 2017] GET /index/ => generated 19412 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 28825|app: -1|req: -1/4] 127.0.0.1 () {38 vars in 720 bytes} [Wed May 24 05:32:29 2017] GET /static/css/envelope.css => generated 5375 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
+[pid: 28825|app: -1|req: -1/5] 127.0.0.1 () {38 vars in 722 bytes} [Wed May 24 05:32:29 2017] GET /static/css/libnotify.css => generated 5474 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
+[pid: 28825|app: -1|req: -1/7] 127.0.0.1 () {38 vars in 712 bytes} [Wed May 24 05:32:29 2017] GET /static/css/main.css => generated 3374 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/7] 127.0.0.1 () {38 vars in 724 bytes} [Wed May 24 05:32:29 2017] GET /static/css/zTreeStyle.css => generated 6231 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
+[pid: 28825|app: -1|req: -1/8] 127.0.0.1 () {38 vars in 730 bytes} [Wed May 24 05:32:29 2017] GET /static/css/bootstrap.min.css => generated 106006 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
+[pid: 28825|app: -1|req: -1/9] 127.0.0.1 () {38 vars in 724 bytes} [Wed May 24 05:32:29 2017] GET /static/css/uploadfile.css => generated 2859 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 111 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/10] 127.0.0.1 () {38 vars in 723 bytes} [Wed May 24 05:32:29 2017] GET /static/src-min-noconflict/ace.js => generated 347254 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 127 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/11] 127.0.0.1 () {38 vars in 719 bytes} [Wed May 24 05:32:29 2017] GET /static/js/jquery-1.12.1.min.js => generated 97403 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/12] 127.0.0.1 () {38 vars in 715 bytes} [Wed May 24 05:32:29 2017] GET /static/js/envelope.jquery.js => generated 6636 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/13] 127.0.0.1 () {38 vars in 705 bytes} [Wed May 24 05:32:29 2017] GET /static/js/humane.min.js => generated 5660 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/14] 127.0.0.1 () {38 vars in 727 bytes} [Wed May 24 05:32:29 2017] GET /static/js/jquery.ztree.core.min.js => generated 30476 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/15] 127.0.0.1 () {38 vars in 711 bytes} [Wed May 24 05:32:29 2017] GET /static/js/bootstrap.min.js => generated 28631 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/16] 127.0.0.1 () {38 vars in 727 bytes} [Wed May 24 05:32:29 2017] GET /static/js/jquery.uploadfile.min.js => generated 24141 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/17] 127.0.0.1 () {38 vars in 711 bytes} [Wed May 24 05:32:29 2017] GET /static/js/jquery.cookie.js => generated 3121 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/18] 127.0.0.1 () {38 vars in 693 bytes} [Wed May 24 05:32:29 2017] GET /static/js/main.js => generated 9392 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/19] 127.0.0.1 () {38 vars in 722 bytes} [Wed May 24 05:32:29 2017] GET /static/images/1.png => generated 9213 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/20] 127.0.0.1 () {38 vars in 722 bytes} [Wed May 24 05:32:29 2017] GET /static/images/2.png => generated 16948 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/21] 127.0.0.1 () {38 vars in 722 bytes} [Wed May 24 05:32:29 2017] GET /static/images/3.png => generated 16824 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/22] 127.0.0.1 () {38 vars in 720 bytes} [Wed May 24 05:32:29 2017] GET /static/images/4.png => generated 28685 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/23] 127.0.0.1 () {38 vars in 731 bytes} [Wed May 24 05:32:29 2017] GET /static/images/ceagle.png => generated 58344 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/24] 127.0.0.1 () {38 vars in 731 bytes} [Wed May 24 05:32:29 2017] GET /static/images/upload.png => generated 3168 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/25] 127.0.0.1 () {38 vars in 731 bytes} [Wed May 24 05:32:29 2017] GET /static/images/folder.png => generated 3106 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/26] 127.0.0.1 () {38 vars in 727 bytes} [Wed May 24 05:32:29 2017] GET /static/images/file.png => generated 2006 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/27] 127.0.0.1 () {38 vars in 731 bytes} [Wed May 24 05:32:29 2017] GET /static/images/logout.png => generated 2174 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/28] 127.0.0.1 () {38 vars in 733 bytes} [Wed May 24 05:32:29 2017] GET /static/images/setting.png => generated 3364 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
+[pid: 28825|app: 0|req: 4/29] 127.0.0.1 () {40 vars in 883 bytes} [Wed May 24 05:32:29 2017] GET /index/jquery.form.js?_=1495603949249 => generated 19412 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 28821|app: -1|req: -1/30] 127.0.0.1 () {38 vars in 743 bytes} [Wed May 24 05:32:29 2017] GET /static/src-min-noconflict/theme-monokai.js => generated 2375 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 125 bytes (0 switches on core 0)
+[pid: 28825|app: -1|req: -1/31] 127.0.0.1 () {38 vars in 737 bytes} [Wed May 24 05:32:29 2017] GET /static/src-min-noconflict/mode-c_cpp.js => generated 17346 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 126 bytes (0 switches on core 0)
+[pid: 28825|app: -1|req: -1/32] 127.0.0.1 () {38 vars in 765 bytes} [Wed May 24 05:32:29 2017] GET /static/images/zTreeStandard.png => generated 11173 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 113 bytes (0 switches on core 0)
+[pid: 28821|app: -1|req: -1/33] 127.0.0.1 () {38 vars in 734 bytes} [Wed May 24 05:32:29 2017] GET /static/images/favicon.ico => generated 1150 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 127 bytes (0 switches on core 0)
+[pid: 28825|app: 0|req: 5/34] 127.0.0.1 () {40 vars in 846 bytes} [Wed May 24 05:32:31 2017] GET /filecontent/?filename=inv_square_false-unreach-call.c => generated 590 bytes in 5 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 28821|app: -1|req: -1/35] 127.0.0.1 () {38 vars in 732 bytes} [Wed May 24 05:32:31 2017] GET /static/images/verify.png => generated 1259 bytes in 0 msecs via sendfile() (HTTP/1.1 200) 3 headers in 112 bytes (0 switches on core 0)
+[pid: 28821|app: 0|req: 1/36] 127.0.0.1 () {40 vars in 852 bytes} [Wed May 24 05:32:31 2017] GET /filecontent/?filename=inv_square_int_true-unreach-call.c => generated 558 bytes in 59 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 28825|app: 0|req: 6/37] 127.0.0.1 () {40 vars in 842 bytes} [Wed May 24 05:32:33 2017] GET /verify/?filename=inv_square_int_true-unreach-call.c => generated 1216 bytes in 409 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 0)
