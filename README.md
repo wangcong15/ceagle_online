@@ -41,9 +41,9 @@
 * sudo update-alternatives --install /usr/bin/llvm-dis llvm-dis /usr/bin/llvm-dis-3.5 100
 
 ### the project:需要输入gitlab的账号密码
-* git clone http://sts.thss.tsinghua.edu.cn:5080/beagle-team/sv-online.git
+* git clone https://github.com/wangcong15/ceagle_online.git
 
-* cd sv-online/
+* cd ceagle_online/
 * sudo pip install pycparser
 * python manage.py migrate
 
