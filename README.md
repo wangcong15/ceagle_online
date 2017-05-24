@@ -41,11 +41,14 @@
 * sudo update-alternatives --install /usr/bin/llvm-dis llvm-dis /usr/bin/llvm-dis-3.5 100
 
 ### the project:需要输入gitlab的账号密码
-* git clone http://sts.thss.tsinghua.edu.cn:5080/beagle-team/sv-online.git
+* git clone https://github.com/wangcong15/ceagle_online.git
 
-* cd sv-online/
+* cd ceagle_online/
 * sudo pip install pycparser
+* sudo pip install django==1.8
+* python manage.py makemigrations
 * python manage.py migrate
+* sudo pip install django==1.9.2
 
 ### run the server
 * uwsgi --http :9794 --chdir ~/Desktop/sv-online --wsgi-file SV_Online_Python/wsgi.py --processes 1 --static-map /static=SV_Online_Python/static
