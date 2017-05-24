@@ -35,6 +35,7 @@
 
 ### clang llvm
 * sudo apt install llvm
+* sudo apt-get install clang-3.5
 * sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-3.5 100
 * sudo update-alternatives --install /usr/bin/opt opt /usr/bin/opt-3.5 100
 * sudo update-alternatives --install /usr/bin/llvm-dis llvm-dis /usr/bin/llvm-dis-3.5 100
