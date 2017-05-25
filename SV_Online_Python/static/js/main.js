@@ -20,7 +20,7 @@ var save_current = function() {
         },
         dataType: "json",
         success: function(data) {
-            humane.log("Saved");
+            humane.log("Saved: " + current_file);
         }
     });
 };
@@ -51,12 +51,12 @@ var verify_button = function() {
 var updateCT = function(data) {
     add_log(data['term_out']);
     if (data['flag'] == 1) {
-        humane.log("TRUE");
+        humane.log("Verify Result: TRUE");
         add_log("[" + current_file + "]: True");
         zNodes2 = [];
         $.fn.zTree.init($("#tree2"), setting2, zNodes2);
     } else {
-        humane.log("FALSE");
+        humane.log("Verify Result: FALSE");
         add_log("[" + current_file + "]: False");
         line_array = data['data'];
         zNodes2 = [];
@@ -333,3 +333,4 @@ $("#btnReject").click(function(){
         },
     });
 });
+

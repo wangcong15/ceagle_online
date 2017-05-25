@@ -6,7 +6,7 @@ DATE: 25/02/2016
 -->
 <html lang="en">
   <head>
-    <title>Ceagle Online</title>
+    <title>Ceagle Onlines</title>
     <link rel="shortcut icon" href="{% static "images/favicon.ico" %}"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/envelope.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/libnotify.css" %}">
@@ -30,7 +30,8 @@ DATE: 25/02/2016
         <img id="folder-btn" title="NEW FOLDER" data-toggle='modal' data-target='#myModal4' src="{% static "images/folder.png" %}"/>
         <img id="file-btn" title="NEW FILE" data-toggle='modal' data-target='#myModal5' src="{% static "images/file.png" %}"/>
         <img id="logout-btn" title="LOG OUT" src="{% static "images/logout.png" %}"/>
-        <img id="setting-btn" title="SETTINGS" src="{% static "images/setting.png" %}"/>
+        <img id="recommend-btn" title="ASSERION RECOMMEND" src="{% static "images/recommend.png" %}"/>
+        <div style="float:right;width:200px;line-height:15px;">Safety Critical Assertion Recommendation</div>
       </div>
     </div>
     <div id="skyline"></div>
@@ -40,7 +41,7 @@ DATE: 25/02/2016
     <div id="tree" class="ztree"></div>
     <div id="console">
       <p id="as" style="text-align:center;border-bottom:1px black solid">Attribute Selection</p>
-      <div id="result-as" style="text-align:center; height:50%; width:100%;overflow-x: auto; overflow-y:auto;margin-bottom:3px">
+      <div id="result-as" style="text-align:center; height:23.5%; width:100%;overflow-x: auto; overflow-y:auto;margin-bottom:3px">
         <table id="mytable" class="mytable" style='margin:0px auto' border="1">
           <tr>
             <th>No.</th>
@@ -60,17 +61,21 @@ DATE: 25/02/2016
           </tr>
         </table>
       </div>
+      <p id="ar" style="text-align:center;border-bottom:1px black solid;border-top:1px black solid">Safety Critical Assertion Recommendation</p>
+      <div id="result-ar" style="text-align:center; height:23.5%; width:100%;overflow-x: auto; overflow-y:auto;margin-bottom:3px">
+
+      </div>
       <p id="ct" style="text-align:center;border-bottom:1px black solid;border-top:1px black solid">Counter Trace</p>
       <div class="msg-text" style="margin: 0 10px; height:40%">
         <div id="tree2" class="ztree"></div>
       </div>
     </div>
     <div id="Log">
-      <p style="text-align:center;border-bottom:1px black solid; margin-bottom:1px" id="log_title">Log</p>
+      <p style="text-align:center;border-bottom:1px black solid; margin-bottom:1px" id="log_title">Terminator</p>
       <div id="log_content">
       </div>
     </div>
-    <div id="editor"></div> 
+    <div id="editor"></div>
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
@@ -301,7 +306,7 @@ DATE: 25/02/2016
             $("#mytable tbody tr").remove("tr.as-item");
             for(var i = 0; i < code_array.length; i++){
               if((code_array[i].trim().indexOf("__VERIFIER_assert") == 0) || (code_array[i].trim().indexOf("__VERIFIER_error") == 0)){
-                $("#mytable").append("<tr class=\"as-item\" data-row=\""+i+"\" data-column=\"0\"><td>"+j+"</td><td>"+(i + 1)+"</td><td>"+code_array[i].trim()+"</td><td onclick=\"verify_button()\"><img src=" + "{% static "images/verify.png" %}" + "></td></tr>");
+                $("#mytable").append("<tr class=\"as-item\" data-row=\""+i+"\" data-column=\"0\"><td>"+j+"</td><td>"+(i + 1)+"</td><td>"+code_array[i].trim()+"</td><td onclick=\"verify_button()\"><img style='width:18px' src=" + "{% static "images/verify.png" %}" + "></td></tr>");
                j++;
               }
             }
@@ -328,7 +333,7 @@ DATE: 25/02/2016
           $("#rename_folder_name").val(treeNode.name);
           $("#delete_folder_name").html(treeNode.name);
           $('#new_folder_name').val("");
-          $('#new_file_name').val(""); 
+          $('#new_file_name').val("");
         }
         else{
           curr_right_click = get_filename(treeNode);
@@ -383,8 +388,8 @@ DATE: 25/02/2016
       $(document).ready(function(){
         var code_array = [];
         $.fn.zTree.init($("#tree"), setting, {{zNodes|safe}});
-        $("#line").mousedown(function(e){ 
-          $(document).mousemove(function(e){    
+        $("#line").mousedown(function(e){
+          $(document).mousemove(function(e){
             $("#tree").css("width", (e || event).clientX + "px");
             $("#editor").css("left", (e || event).clientX + "px");
             $("#line").css("left", (e || event).clientX + "px");
@@ -392,12 +397,12 @@ DATE: 25/02/2016
             $("#Log").css("left", (e || event).clientX + "px");
             $("#line3").css("left", (e || event).clientX + "px");
           });
-          $(document).mouseup(function(){ 
+          $(document).mouseup(function(){
             $(document).unbind("mousemove");
           });
         });
-        $("#line2").mousedown(function(e){ 
-          $(document).mousemove(function(e){    
+        $("#line2").mousedown(function(e){
+          $(document).mousemove(function(e){
             $("#console").css("width", $(document).width() - (e || event).clientX + "px");
             $("#editor").css("right", $(document).width() - (e || event).clientX + "px");
             $("#line2").css("left", (e || event).clientX + "px");
@@ -406,11 +411,11 @@ DATE: 25/02/2016
             $("#Log").css("width", (e || event).clientX - mLeft + "px");
             $("#line3").css("width", (e || event).clientX - mLeft + "px");
           });
-          $(document).mouseup(function(){ 
+          $(document).mouseup(function(){
             $(document).unbind("mousemove");
           });
         });
-        $("#line3").mousedown(function(e){ 
+        $("#line3").mousedown(function(e){
           var max_height = $(document).height() * 0.9;
           $(document).mousemove(function(e){
             if((e || event).clientY < max_height){
@@ -420,7 +425,7 @@ DATE: 25/02/2016
               $("#Log").css("bottom", "0px");
             }
           });
-          $(document).mouseup(function(){ 
+          $(document).mouseup(function(){
             $(document).unbind("mousemove");
           });
         });
@@ -444,11 +449,19 @@ DATE: 25/02/2016
         $("#welcome-bk").click(function(){
           $("#welcome").fadeOut(1000);
         });
+        humane.error = humane.spawn({ addnCls: 'humane-libnotify-error', timeout: 1500 })
+        $('#recommend-btn').click(function(){
+          if(current_file == "")
+            humane.error("Choose a file firstly!")
+          else{
+            humane.log("The file is being analyzed. Wait a second!");
+          }
+        });
         $("#log_content").css("top", $("#log_title").css("height"));
         if($.cookie('first_time')!="NO"){
           $("#ins1").css("display", "block");
           $.cookie('first_time', 'NO', {expires: 3650});
-        }
+        };
       });
     </script>
   </body>
