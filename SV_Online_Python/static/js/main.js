@@ -277,23 +277,6 @@ $("#ins4").click(function(){
     $("#ins4").fadeOut(500);
 });
 
-$("#recommendAssertions").click(function(){
-    $.ajax({
-        type: "GET",
-        url: "/api/assertion_recommendation/",
-        data: {'filename': current_file},
-        dataType: "json",
-        success: function(data) {
-            var function_array = data;
-            $("#mytable2 tbody tr").remove("tr.as-item");
-            for(var i = 0; i < function_array.length; i++){
-                $("#mytable2").append("<tr class=\"as-item\" data-row=\""+i+"\" data-column=\"0\"><td>"+function_array[i]["function"]+"</td><td>"+function_array[i]["needAssertion"]+"</td><td>"+function_array[i]["variable"]+"</td><td>"+function_array[i]["expr"]+"</td><td><a onclick='arClick(this)' data-name="+function_array[i]["common_index_array"]+" data-toggle='modal' data-target='#acceptModal'>Accept</a><a onclick='arClick(this)' data-name="+function_array[i]["common_index_array"]+" data-toggle='modal' data-target='#rejectModal' style='color:red'>Reject</a></td></tr>");
-            }
-            $('#mytable2').fadeIn();                                                
-        }
-    });
-});
-
 var cia = [];
 
 function arClick(that){

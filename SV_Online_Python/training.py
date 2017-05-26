@@ -10,7 +10,6 @@ from rm_duplicated import rm_dup2
 from pro_rec3 import gen_feat
 import math
 from models import user_coefficient
-from gen_expr import get_expr
 
 preHandled = 0
 
@@ -136,11 +135,10 @@ def predict_flag(test_data, user_name):
 			result -= 1
 		elif flag_a == 1:
 			result += 1
-	if result >= 0: 
-		var_rec = get_var_rec(func_temp_array, test_data)
-		return 1, var_rec, index_temp_array
+	if result >= 0:
+		return 1, index_temp_array
 	else:
-		return 0, "", index_temp_array
+		return 0, index_temp_array
 
 def propertyRecommendation(filename, username):
 
@@ -154,19 +152,11 @@ def propertyRecommendation(filename, username):
 
 	final_result = []
 	for key in fea_test:
-		assertion_flag, recommend_var, common_index_array = predict_flag(key, username)
-		asser_expr = ""
+		assertion_flag, common_index_array = predict_flag(key, username)
 
 		if assertion_flag:
-			asser_expr = get_expr(filename, key['func_name'], recommend_var)
-
-		print "----------asser_expr----------"
-		print asser_expr
-		print "----------asser_expr----------"
-
-		if assertion_flag:
-			final_result.append({'function':key['func_name'], 'needAssertion':'Yes', 'variable': recommend_var, 'common_index_array': common_index_array, 'expr': asser_expr})
+			final_result.append({'function':key['func_name'], 'needAssertion':'Need','expr': "", 'common_index_array': common_index_array})
 		else:
-			final_result.append({'function':key['func_name'], 'needAssertion':'No', 'variable': "", 'common_index_array': common_index_array, 'expr': asser_expr})
+			final_result.append({'function':key['func_name'], 'needAssertion':'Not Need', 'expr': "", 'common_index_array': common_index_array})
 
 	return final_result
