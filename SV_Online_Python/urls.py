@@ -8,6 +8,7 @@ from django.template import RequestContext
 urlpatterns = [
     url(r'^index/', view.index),
     url(r'^filecontent/', view.filecontent),
+    url(r'^assertionrecommend', view.assertionrecommend),
     url(r'^verify/', view.shell),
     url(r'^login/', view.login),
     url(r'^download/', view.download),

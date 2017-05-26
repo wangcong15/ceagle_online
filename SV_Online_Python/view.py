@@ -13,7 +13,7 @@ from django.core.files.base import ContentFile
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 import xml.etree.ElementTree as ET
-from models import users, user_coefficient
+from models import users, user_coefficient, fileassertion
 import md5
 from django.views.decorators.csrf import csrf_exempt
 from django.http import StreamingHttpResponse
@@ -121,6 +121,29 @@ def filecontent(request):
         response_data = {}
         response_data['data'] = file_content
         return HttpResponse(json.dumps(response_data), content_type="application/json") 
+
+def assertionrecommend(request):
+    if not check_cookie(request):
+        return HttpResponse(json.dumps({}), content_type="application/json")
+    username = request.COOKIES['user_name']
+    if request.method == 'GET':
+        file_name = request.GET['filename']
+        fp = os.path.join(settings.MEDIA_ROOT, username, file_name)
+        fa = fileassertion.objects.filter(fapath=fp)
+        response_data = {}
+        if len(fa) == 1:
+            if fa[0].faneed:
+                response_data['need'] = "Need"
+            else:
+                response_data['need'] = "No Need"
+            response_data['expr'] = fa[0].faexpr
+            if fa[0].faaccept==0:
+                response_data['accept'] = "NOT DECIDED"
+            elif fa[0].faaccept==1:
+                response_data['accept'] = "ACCEPT"
+            else:
+                response_data['accept'] = "REJECT"
+        return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 @csrf_exempt
 def update_file(request):
@@ -337,7 +360,21 @@ def assertion_recommendation(request):
     if request.method == 'GET':
         file_name = request.GET['filename']
         fo = os.path.join(settings.MEDIA_ROOT, username, file_name)
+        print fo
         response_data = propertyRecommendation(fo, username)
+        fa = fileassertion.objects.filter(fapath=fo)
+        if len(fa) == 1:
+            if response_data[0]['needAssertion'] == 'Need':
+                fileassertion.objects.filter(fapath=fo).update(faneed=True, faexpr=response_data[0]['expr'])
+            else:
+                fileassertion.objects.filter(fapath=fo).update(faneed=False, faexpr=response_data[0]['expr'])
+        else:
+            if response_data[0]['needAssertion']=='Need':
+                fa1 = fileassertion.objects.create(fapath=fo, faneed=True, faexpr=response_data[0]['expr'], faaccept=0)
+                fa1.save()
+            else:
+                fa1 = fileassertion.objects.create(fapath=fo, faneed=False, faexpr=response_data[0]['expr'], faaccept=0)
+                fa1.save()
         return HttpResponse(json.dumps(response_data), content_type="application/json") 
 
 def accept_common(request):
@@ -347,6 +384,9 @@ def accept_common(request):
     if request.method == 'GET':
         cia = request.GET['cia']
         cia = cia.split(',')
+        file_name = request.GET['filename']
+        fo = os.path.join(settings.MEDIA_ROOT, username, file_name)
+        fileassertion.objects.filter(fapath=fo).update(faaccept=1)
         for i in range(len(cia)):
             cia[i] = int(cia[i])
         ucdata = user_coefficient.objects.filter(ucuser=username)[0]
@@ -370,6 +410,9 @@ def reject_common(request):
     if request.method == 'GET':
         cia = request.GET['cia']
         cia = cia.split(',')
+        file_name = request.GET['filename']
+        fo = os.path.join(settings.MEDIA_ROOT, username, file_name)
+        fileassertion.objects.filter(fapath=fo).update(faaccept=2)
         for i in range(len(cia)):
             cia[i] = int(cia[i])
         ucdata = user_coefficient.objects.filter(ucuser=username)[0]

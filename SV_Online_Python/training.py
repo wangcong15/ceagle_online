@@ -10,6 +10,7 @@ from rm_duplicated import rm_dup2
 from pro_rec3 import gen_feat
 import math
 from models import user_coefficient
+from expr_gen import expression_generation
 
 preHandled = 0
 
@@ -145,8 +146,6 @@ def propertyRecommendation(filename, username):
 	global fea_test
 	fea_test = gen_feat(filename)
 	pre_handle()
-	
-	# Only prehandle the common dataset in the first time
 	global preHandled
 	preHandled = 1
 
@@ -155,8 +154,8 @@ def propertyRecommendation(filename, username):
 		assertion_flag, common_index_array = predict_flag(key, username)
 
 		if assertion_flag:
-			final_result.append({'function':key['func_name'], 'needAssertion':'Need','expr': "", 'common_index_array': common_index_array})
+			expr = expression_generation(filename)
+			final_result.append({'function':key['func_name'], 'needAssertion':'Need','expr': expr, 'common_index_array': common_index_array})
 		else:
-			final_result.append({'function':key['func_name'], 'needAssertion':'Not Need', 'expr': "", 'common_index_array': common_index_array})
-
+			final_result.append({'function':key['func_name'], 'needAssertion':'No Need', 'expr': ""})
 	return final_result

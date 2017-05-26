@@ -5,7 +5,6 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 def rec_index(request):
-
 	data_array = []
 	asserRecs = asser_rec.objects.order_by('?')[:10]
 	for asserRecs_i in asserRecs:

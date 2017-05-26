@@ -289,7 +289,7 @@ $("#btnAccept").click(function(){
     $.ajax({
         type: "GET",
         url: "/api/accept_common/",
-        data: {'cia': cia.toString()},
+        data: {'cia': cia.toString(),'filename':current_file},
         dataType: "json",
         success: function(data) {
             if(data['flag'] == 1)
@@ -305,7 +305,7 @@ $("#btnReject").click(function(){
     $.ajax({
         type: "GET",
         url: "/api/reject_common/",
-        data: {'cia': cia.toString()},
+        data: {'cia': cia.toString(),'filename':current_file},
         dataType: "json",
         success: function(data) {
             if(data['flag'] == 1)

@@ -25,3 +25,9 @@ class asser_rec(models.Model):
 
 class asser_count(models.Model):
 	acnumber = models.CharField(max_length=20)
+
+class fileassertion(models.Model):
+	fapath = models.CharField(max_length=200)
+	faneed = models.BooleanField(default=False)
+	faexpr = models.CharField(max_length=50)
+	faaccept = models.IntegerField()

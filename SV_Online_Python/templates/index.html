@@ -73,6 +73,11 @@ DATE: 25/02/2016
         </table>
         <div id="caption-ar" style='display:none'>
           <br>
+          <p>* We have never recommend assertions for this file.</br>
+            Click "Assertion Recommend" button.</p>
+        </div>
+        <div id="caption-ar2" style='display:none'>
+          <br>
           <p>* Choose ACCEPT or REJECT to feedback.</p>
         </div>
       </div>
@@ -293,10 +298,10 @@ DATE: 25/02/2016
       function zTreeOnClick(event, treeId, treeNode) {
         $("#default-ar").css("display", "none");
         $("#default-as").css("display", "none");
+        $("#mytable2").css("display", "none");
         $("#mytable").fadeIn();
         $("#caption-as").fadeIn();
         $("#caption-ar").fadeIn();
-        $("#mytable2").fadeOut();
         if (current_file.length != 0 && current_change == 1){
           save_current();
         }
@@ -333,6 +338,27 @@ DATE: 25/02/2016
               editor.navigateTo(row, column);
             });
             current_change = 0;
+          }
+        });
+        <!--Get The Previos Assertion-->
+        $.ajax({
+          type: "GET",
+          url: "/assertionrecommend/",
+          data: {"filename": current_file},
+          dataType: "json",
+          success: function(data){
+            if(JSON.stringify(data)!="{}"){
+              $("#caption-ar").css("display", "none");
+              $("#caption-ar2").fadeIn();
+              $("#mytable2 tbody tr").remove("tr.as-item");
+              $("#mytable2").append("<tr class=\"as-item\" data-row=\"1\" data-column=\"0\"><td>" + data["need"] + "</td><td>" + data["expr"] + "</td><td>" + data["accept"] + "</td></tr>");
+              $('#mytable2').fadeIn();
+            }
+            else{
+              $("#caption-ar2").css("display", "none");
+              $("#caption-ar").fadeIn();
+            }
+
           }
         });
       };
