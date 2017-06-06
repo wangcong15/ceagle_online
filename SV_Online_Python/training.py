@@ -154,8 +154,8 @@ def propertyRecommendation(filename, username):
 		assertion_flag, common_index_array = predict_flag(key, username)
 
 		if assertion_flag:
-			expr = expression_generation(filename)
-			final_result.append({'function':key['func_name'], 'needAssertion':'Need','expr': expr, 'common_index_array': common_index_array})
+			expr, caption = expression_generation(filename)
+			final_result.append({'function':key['func_name'], 'needAssertion':'Need','expr': expr, 'common_index_array': common_index_array,'caption':caption})
 		else:
-			final_result.append({'function':key['func_name'], 'needAssertion':'No Need', 'expr': "", 'common_index_array': common_index_array})
+			final_result.append({'function':key['func_name'], 'needAssertion':'No Need', 'expr': "", 'common_index_array': common_index_array,'caption':''})
 	return final_result

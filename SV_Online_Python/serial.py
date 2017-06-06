@@ -82,36 +82,47 @@ def expression_generation(file_name):
     serial = serial_func(file_ast)
     print serial
     result = ""
+    caption = ""
     ##[No.1] Assignment of a fixed address to a pointer
     if len(re.findall(pattern1, serial))>0:
-        result += "assert(strcmp(init_"+re.findall(pattern1, serial)[0][0]+", final_"+re.findall(pattern1, serial)[0][0]+")==0);"
+        result = "assert(strcmp(init_"+re.findall(pattern1, serial)[0][0]+", final_"+re.findall(pattern1, serial)[0][0]+")==0);"
+        caption = "Assignment of a fixed address to a pointer"
     ##[No.2] Assigning instead of Comparing
-    if len(re.findall(pattern2, serial))>0:
+    elif len(re.findall(pattern2, serial))>0:
         tempstr = "assert("+re.findall(pattern2, serial)[0]+");"
-        result += tempstr.replace('=','==')
+        result = tempstr.replace('=','==')
+        caption = "Assigning instead of Comparing"
     ##[No.3] Wrap-around Error
-    if len(re.findall(pattern3, serial))>0:
-        result += "assert("+re.findall(pattern3, serial)[0][0]+"<10000000000);"
+    elif len(re.findall(pattern3, serial))>0:
+        result = "assert("+re.findall(pattern3, serial)[0][0]+"<10000000000);"
+        caption = "Wrap-around Error"
     ##[No.4] Buffer Access with Incorrect Length Value 
-    if len(re.findall(pattern4, serial))>0:
-        result += "assert("+re.findall(pattern4, serial)[0][1]+"<=sizeof("+re.findall(pattern4, serial)[0][0]+");" 
+    elif len(re.findall(pattern4, serial))>0:
+        result = "assert("+re.findall(pattern4, serial)[0][1]+"<=sizeof("+re.findall(pattern4, serial)[0][0]+");" 
+        caption = "Buffer Access with Incorrect Length Value"
     ##[No.5] Deletion of Data Structure Sentinel
-    if len(re.findall(pattern5, serial))>0:
-        result += "assert("+re.findall(pattern5, serial)[0][2]+"&lt;sizeof("+re.findall(pattern5, serial)[0][0]+")-1;"
+    elif len(re.findall(pattern5, serial))>0:
+        result = "assert("+re.findall(pattern5, serial)[0][2]+"&lt;sizeof("+re.findall(pattern5, serial)[0][0]+")-1;"
+        caption = "Deletion of Data Structure Sentinel"
     ##[No.6] Improper Restriction of Operations within the Bounds 
-    if len(re.findall(pattern6, serial))>0:
-        result += "assert("+re.findall(pattern6, serial)[0][1]+"&lt;sizeof("+re.findall(pattern6, serial)[0][0]+")&&"+re.findall(pattern6, serial)[0][1]+"&gt;= 0);"
+    elif len(re.findall(pattern6, serial))>0:
+        result = "assert("+re.findall(pattern6, serial)[0][1]+"&lt;sizeof("+re.findall(pattern6, serial)[0][0]+")&&"+re.findall(pattern6, serial)[0][1]+"&gt;= 0);"
         print result
+        caption = "Improper Restriction of Operations within the Bounds"
     ##[No.7] Missing Default Case in Switch Statement
-    if len(re.findall(pattern7, serial))>0 and serial.find("NoDefault")>=0:
-        result += "assert(switch_variable==0||switch_variable==1);"
+    elif len(re.findall(pattern7, serial))>0 and serial.find("NoDefault")>=0:
+        result = "assert(switch_variable==0||switch_variable==1);"
+        caption = "Missing Default Case in Switch Statement"
     ##[No.8] Omitted Break Statement in Switch
-    if len(re.findall(pattern8, serial))>0:
-        result += "assert(true);"
+    elif len(re.findall(pattern8, serial))>0:
+        result = "assert(true);"
+        caption = "Omitted Break Statement in Switch"
     ##[No.9] Signed to Unsigned Conversion Error
-    if len(re.findall(pattern9, serial))>0:
-        result += "assert("+re.findall(pattern9, serial)[0]+"> 0);"
+    elif len(re.findall(pattern9, serial))>0:
+        result = "assert("+re.findall(pattern9, serial)[0]+"> 0);"
+        caption = "Signed to Unsigned Conversion Error"
     ##[No.10] Use of Externally-Controlled Format String
-    if len(re.findall(pattern10, serial))>0:
-        result += "assert("+re.findall(pattern10, serial)[0][1]+");"
-    return result
+    elif len(re.findall(pattern10, serial))>0:
+        result = "assert("+re.findall(pattern10, serial)[0][1]+");"
+        caption = "Use of Externally-Controlled Format String"
+    return result, caption

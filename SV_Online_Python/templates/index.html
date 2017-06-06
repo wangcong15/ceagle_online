@@ -6,7 +6,7 @@ DATE: 25/02/2016
 -->
 <html lang="en" xmlns="http://www.w3.org/1999/html">
   <head>
-    <title>Ceagle Online</title>
+    <title>[FSE'17]Ceagle Online</title>
     <link rel="shortcut icon" href="{% static "images/favicon.ico" %}"/>
     <link rel="stylesheet" type="text/css" href="{% static "css/envelope.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/libnotify.css" %}">
@@ -78,7 +78,7 @@ DATE: 25/02/2016
         </div>
         <div id="caption-ar2" style='display:none'>
           <br>
-          <p>* Choose ACCEPT or REJECT to feedback.</p>
+          <p id="caption-bug">* Choose ACCEPT or REJECT to feedback.</p>
         </div>
       </div>
       <p id="ct" style="text-align:center;border-bottom:1px black solid;border-top:1px black solid"><b>Counter Trace</b></p>
@@ -513,6 +513,9 @@ DATE: 25/02/2016
               $("#mytable2 tbody tr").remove("tr.as-item");
               for (var i = 0; i < function_array.length; i++) {
                 $("#mytable2").append("<tr class=\"as-item\" data-row=\"" + i + "\" data-column=\"0\"><td>" + function_array[i]["needAssertion"] + "</td><td>" + function_array[i]["expr"] + "</td><td><a onclick='arClick(this)' data-name=" + function_array[i]["common_index_array"] + " data-toggle='modal' data-target='#acceptModal'>ACCEPT</a> / <a onclick='arClick(this)' data-name=" + function_array[i]["common_index_array"] + " data-toggle='modal' data-target='#rejectModal' style='color:red'>REJECT</a></td></tr>");
+                if (function_array[i]['caption'] != ""){
+                  $("#caption-bug").html("Potential bug type: " + function_array[i]['caption'] + "</br>You can find more details from <a target='_blank' href='http://congwang.tech/bug_code/#!/'>here</a>.");
+                }
               }
               $('#mytable2').fadeIn();
             }

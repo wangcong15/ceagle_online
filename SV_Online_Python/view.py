@@ -317,7 +317,7 @@ def check_register(user_name, password, req_ip):
         new_user.save()
         line1 = "mkdir media/" + user_name
         os.system(line1)
-        line2 = "cp media/example/* media/" + user_name + "/"
+        line2 = "cp -r media/example/* media/" + user_name + "/"
         os.system(line2)
         return True
 
