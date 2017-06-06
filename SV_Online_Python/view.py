@@ -360,7 +360,6 @@ def assertion_recommendation(request):
     if request.method == 'GET':
         file_name = request.GET['filename']
         fo = os.path.join(settings.MEDIA_ROOT, username, file_name)
-        print fo
         response_data = propertyRecommendation(fo, username)
         fa = fileassertion.objects.filter(fapath=fo)
         if len(fa) == 1:

@@ -281,6 +281,7 @@ var cia = [];
 
 function arClick(that){
     cia = $(that).data('name').split(',');
+    console.log(cia);
     for(var i in cia)
         cia[i] = parseInt(cia[i]);
 }
