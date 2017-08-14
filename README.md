@@ -1,4 +1,4 @@
-# Ceagle Online 部署
+# Ceagle Online Deployment
 ### django
 * sudo apt-get install python-pip
 * sudo apt-get install python-virtualenv
@@ -27,7 +27,7 @@
 * cd ~/Desktop
 * sudo apt-get install git
 
-### mysql 密码设置为forever
+### mysql set the password as: forever
 * sudo apt-get install mysql-server
 * sudo apt-get install mysql-client
 * sudo apt-get install libmysqlclient-dev
@@ -40,7 +40,7 @@
 * sudo update-alternatives --install /usr/bin/opt opt /usr/bin/opt-3.5 100
 * sudo update-alternatives --install /usr/bin/llvm-dis llvm-dis /usr/bin/llvm-dis-3.5 100
 
-### the project:需要输入gitlab的账号密码
+### the project: input the username and password of gitlab
 * git clone https://github.com/wangcong15/ceagle_online.git
 
 * cd ceagle_online/
